@@ -1,0 +1,12 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity comparator2 is port (
+  A, B: in std_logic_vector(1 downto 0);
+  Equals: out std_logic_vector);
+end comparator2;
+
+architecture behavioral of comparator2 is
+  begin
+    Equals <= (A(1) XNOR B(1)) AND (A(0) xnor B(0));
+  end behavioral;
